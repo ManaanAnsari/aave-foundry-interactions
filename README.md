@@ -1,11 +1,12 @@
 # Foundry and Aave Interactions
 
-Test and interact with Aave using Foundry and Sepolia fork.
+Test and interact with Aave using Foundry and a Sepolia fork.
 
 ### Installation
 
 ```bash
-
+git clone https://github.com/ManaanAnsari/aave-foundry-interactions.git
+cd aave-foundry-interactions
 ```
 
 ### Setting Up
@@ -19,7 +20,7 @@ anvil --fork-url $SEPOLIA_RPC_URL
 
 ### Building the Project
 
-Run the build command to check if everything is working.
+Run the build command to ensure everything is set up correctly.
 
 ```bash
 forge build
@@ -27,7 +28,7 @@ forge build
 
 ### Running Tests
 
-Run all the tests:
+Run all tests:
 
 ```bash
 forge test --rpc-url 127.0.0.1:8545 -vvv
@@ -39,11 +40,11 @@ Run individual tests:
 forge test --mt testSupplyAsset --rpc-url 127.0.0.1:8545 -vvv
 ```
 
-functionalities tested
+### Functionalities Tested
 
-- [ ] deposit
-- [ ] borrow
-- [ ] repay
-- [ ] withdraw
-- [ ] liquidations
-- [ ] flashloans
+- [x] Deposit
+- [x] Borrow
+- [x] Repay
+- [x] Withdraw
+- [ ] Liquidations
+- [ ] Flashloans
