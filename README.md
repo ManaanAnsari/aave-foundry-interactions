@@ -1,66 +1,49 @@
-## Foundry
+# Foundry and Aave Interactions
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Test and interact with Aave using Foundry and Sepolia fork.
 
-Foundry consists of:
+### Installation
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+```bash
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
 ```
 
-### Test
+### Setting Up
 
-```shell
-$ forge test
+Open a new terminal and run the mainnet fork. Make sure you create a `.env` file from the provided template.
+
+```bash
+source .env
+anvil --fork-url $SEPOLIA_RPC_URL
 ```
 
-### Format
+### Building the Project
 
-```shell
-$ forge fmt
+Run the build command to check if everything is working.
+
+```bash
+forge build
 ```
 
-### Gas Snapshots
+### Running Tests
 
-```shell
-$ forge snapshot
+Run all the tests:
+
+```bash
+forge test --rpc-url 127.0.0.1:8545 -vvv
 ```
 
-### Anvil
+Run individual tests:
 
-```shell
-$ anvil
+```bash
+forge test --mt testSupplyAsset --rpc-url 127.0.0.1:8545 -vvv
 ```
 
-### Deploy
+functionalities tested
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- [ ] deposit
+- [ ] borrow
+- [ ] repay
+- [ ] withdraw
+- [ ] liquidations
+- [ ] flashloans
